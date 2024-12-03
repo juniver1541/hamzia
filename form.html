@@ -108,7 +108,7 @@
             console.log("getLastSubmission 함수 호출", userIdentifier);
             try {
                 const q = query(
-                    collection(db, 'suggestions2'),
+                    collection(db, 'suggestions3'),
                     where('userIdentifier', '==', userIdentifier),
                     orderBy('timestamp', 'desc'),
                     limit(1)
@@ -165,7 +165,7 @@
                     userIdentifier: userIdentifier
                 });
 
-                const docRef = await addDoc(collection(db, 'suggestions2'), {
+                const docRef = await addDoc(collection(db, 'suggestions3'), {
                     content: suggestion,
                     timestamp: serverTimestamp(),
                     userIdentifier: userIdentifier
